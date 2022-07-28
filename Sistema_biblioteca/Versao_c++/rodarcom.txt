@@ -1,0 +1,2 @@
+g++ -std=c++11 for.cpp
+./a.out

@@ -1,0 +1,150 @@
+# depslib dependency file v1.0
+1658874321 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\versao c\projeto_biblioteca\main.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"operacoes_livros.h"
+
+1658874880 c:\users\pedro\desktop\trabalho_aeds2\aeds\versao c\projeto_biblioteca\cabecalho.h
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1658774960 c:\users\pedro\desktop\trabalho_aeds2\aeds\versao c\projeto_biblioteca\operacoes_alunos.h
+
+1658862368 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\versao c\projeto_biblioteca\operacoes_alunos.c
+	"Cabecalho.h"
+
+1658864911 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\versao c\projeto_biblioteca\operacoes_livros.c
+	"Cabecalho.h"
+
+1658865051 c:\users\pedro\desktop\trabalho_aeds2\aeds\versao c\projeto_biblioteca\operacoes_livros.h
+
+1658874866 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\versao c\projeto_biblioteca\operacoes_infra.c
+	"Cabecalho.h"
+
+1658954760 source:c:\users\pedro\desktop\trabalho_aeds2\sistema-biblioteca\versao c\projeto_biblioteca\main.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"operacoes_livros.h"
+	"operacoes_infra.h"
+
+1658954760 c:\users\pedro\desktop\trabalho_aeds2\sistema-biblioteca\versao c\projeto_biblioteca\cabecalho.h
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1658954760 c:\users\pedro\desktop\trabalho_aeds2\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_alunos.h
+	"Cabecalho.h"
+
+1658954760 c:\users\pedro\desktop\trabalho_aeds2\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_livros.h
+	"Cabecalho.h"
+
+1658944234 c:\users\pedro\desktop\trabalho_aeds2\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_infra.h
+	"Cabecalho.h"
+
+1658954760 source:c:\users\pedro\desktop\trabalho_aeds2\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_alunos.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	<stdio_ext.h>
+
+1658944187 source:c:\users\pedro\desktop\trabalho_aeds2\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_infra.c
+	"Cabecalho.h"
+	"operacoes_infra.h"
+	"operacoes_alunos.h"
+
+1659040188 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\main.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"operacoes_livros.h"
+	"operacoes_infra.h"
+	"salvar_tipos.h"
+	"carregar_tipos.h"
+
+1659037061 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\cabecalho.h
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1658954760 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_alunos.h
+	"Cabecalho.h"
+
+1658945328 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_livros.h
+	"Cabecalho.h"
+
+1658944234 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_infra.h
+	"Cabecalho.h"
+
+1659038400 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_alunos.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+
+1658944187 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_infra.c
+	"Cabecalho.h"
+	"operacoes_infra.h"
+	"operacoes_alunos.h"
+
+1659036944 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\operacoes_livros.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+
+1659034570 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\salvar_tipos.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"salvar_tipos.h"
+
+1658945447 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\salvar_tipos.h
+	"Cabecalho.h"
+
+1659040327 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\carregar_tipos.c
+	"Cabecalho.h"
+
+1659040304 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao c\projeto_biblioteca\carregar_tipos.h
+
+1659040664 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\carregar_tipos.c
+	"Cabecalho.h"
+
+1659040695 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\cabecalho.h
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1659040188 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\main.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"operacoes_livros.h"
+	"operacoes_infra.h"
+	"salvar_tipos.h"
+	"carregar_tipos.h"
+
+1658954760 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\operacoes_alunos.h
+	"Cabecalho.h"
+
+1658945328 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\operacoes_livros.h
+	"Cabecalho.h"
+
+1658944234 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\operacoes_infra.h
+	"Cabecalho.h"
+
+1658945447 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\salvar_tipos.h
+	"Cabecalho.h"
+
+1659040304 c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\carregar_tipos.h
+
+1659038400 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\operacoes_alunos.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+
+1658944187 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\operacoes_infra.c
+	"Cabecalho.h"
+	"operacoes_infra.h"
+	"operacoes_alunos.h"
+
+1659036944 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\operacoes_livros.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+
+1659034570 source:c:\users\pedro\desktop\trabalho_aeds\sistema-biblioteca\versao_c\projeto_biblioteca\salvar_tipos.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"salvar_tipos.h"
+

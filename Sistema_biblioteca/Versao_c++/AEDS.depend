@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1658354518 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\main.cpp
+	"Cabecalho.h"
+
+1658259000 c:\users\pedro\desktop\trabalho_aeds2\aeds\operacoes_alunos.h
+	<string>
+
+1658334910 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\operacoes_alunos.cpp
+	"Cabecalho.h"
+
+1656526914 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\teste.cpp
+
+1658336443 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\operacoes_livros.cpp
+	"Cabecalho.h"
+
+1658259000 c:\users\pedro\desktop\trabalho_aeds2\aeds\operacoes_livros.h
+
+1658335760 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\operacoes_infra.cpp
+	"Cabecalho.h"
+
+1658335613 c:\users\pedro\desktop\trabalho_aeds2\aeds\operacoes_infra.h
+
+1657566204 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\salvar_alunos.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<bits/stdc++.h>
+	"operacoes_livros.h"
+	"operacoes_alunos.h"
+	"operacoes_infra.h"
+
+1657561264 c:\users\pedro\desktop\trabalho_aeds2\aeds\salvar_alunos.h
+
+1658248456 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\salvar_tipos.cpp
+	"Cabecalho.h"
+
+1658264746 c:\users\pedro\desktop\trabalho_aeds2\aeds\salvar_tipos.h
+
+1658259000 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\carregar_tipos.cpp
+	"Cabecalho.h"
+
+1658259000 c:\users\pedro\desktop\trabalho_aeds2\aeds\carregar_tipos.h
+
+1658248576 c:\users\pedro\desktop\trabalho_aeds2\aeds\cabecalho.h
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	<bits/stdc++.h>
+	"operacoes_alunos.h"
+	"operacoes_livros.h"
+	"operacoes_infra.h"
+	"salvar_tipos.h"
+	"carregar_tipos.h"
+	"criptografia.h"
+
+1658248553 c:\users\pedro\desktop\trabalho_aeds2\aeds\criptografia.h
+
+1658250495 source:c:\users\pedro\desktop\trabalho_aeds2\aeds\criptografia.cpp
+	"Cabecalho.h"
+
