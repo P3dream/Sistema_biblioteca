@@ -148,3 +148,52 @@
 	"operacoes_alunos.h"
 	"salvar_tipos.h"
 
+1659127388 source:c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\carregar_tipos.c
+	"Cabecalho.h"
+
+1659135920 c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\cabecalho.h
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdio_ext.h>
+
+1659044745 source:c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\main.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"operacoes_livros.h"
+	"operacoes_infra.h"
+	"salvar_tipos.h"
+	"carregar_tipos.h"
+
+1659135029 c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\operacoes_alunos.h
+	"Cabecalho.h"
+
+1658945328 c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\operacoes_livros.h
+	"Cabecalho.h"
+
+1659135019 c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\operacoes_infra.h
+	"Cabecalho.h"
+
+1659105920 c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\salvar_tipos.h
+	"Cabecalho.h"
+
+1659040304 c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\carregar_tipos.h
+
+1659102369 source:c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\operacoes_alunos.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+
+1659127359 source:c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\operacoes_infra.c
+	"Cabecalho.h"
+	"operacoes_infra.h"
+	"operacoes_alunos.h"
+
+1659036944 source:c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\operacoes_livros.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+
+1659102401 source:c:\users\pedro\desktop\trabalho_aeds\sistema_biblioteca\versao_c\salvar_tipos.c
+	"Cabecalho.h"
+	"operacoes_alunos.h"
+	"salvar_tipos.h"
+

@@ -1,261 +1,140 @@
 #include "Cabecalho.h"
-#include "operacoes_alunos.h"
-//#include <stdio_ext.h>
 
-void imprimir_livro(struct livros *cab, struct alunos *q) {
-    if (cab->prox == NULL) {
-		system(CLEAR);
-        printf("Nao ha livros registrados no sistema!\n");
-        return;
+
+void ler_alunos(struct alunos *cab,int * num_alunos,int * id_alunos){
+
+    FILE * File = fopen ("alunos.txt","r");//abrimos o arquivo no modo de leitura
+    if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
+        printf("Nao foi possivel abrir o arquivo alunos.txt\n");
     }
-    int id;
-    printf("Digite o id do livro que deseja buscar:\n");
-    scanf("%d",&id);
-    struct livros *p = cab->prox;
-    while (p->id != id && p->prox!=NULL) {
-        p = p->prox;
+
+    char *buffer; // ponteiro para char, utilizado como auxiliar para ler os dados do arquivo.
+    size_t bufsize = 2; // definimos um tamanho inicial, mas poderia ser qualquer outro pois sera mudado utilizando a funcao getline.
+    int tamanho; // tamanho da string.
+    struct alunos *ant = cab; // inicialmente ant apontara para o no cabeca
+    struct alunos *p;
+    buffer = (char * )malloc (bufsize * sizeof(char)); // alocamos memoria para o buffer
+
+    getline(&buffer,&bufsize,File); // lemos a variavel id_alunos do arquivo
+    (*id_alunos) = atoi(buffer); // transformamos em inteiro  e atribuimos a id_alunos
+
+    getline(&buffer,&bufsize,File); // o mesmo para num_alunos
+    (*num_alunos) = atoi(buffer);
+
+    for(int i = 0; i<(*num_alunos); i++){// ler num_alunos alunos.
+        p = ant->prox;
+        p = (struct alunos *)malloc(sizeof(struct alunos));
+        ant->prox = p;
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->nome, buffer); // copiamos o conteudo da variavel auxiliar buffer para p->nome.
+        p->nome[tamanho-1]='\0'; // substituimos o '\n' no fim da string por '\0'
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->matricula, buffer);
+        p->matricula[tamanho-1]='\0';
+
+        tamanho = getline(&buffer,&bufsize,File);
+        p->id = atoi(buffer);
+
+        tamanho = getline(&buffer,&bufsize,File);
+        p->pendencia = atoi(buffer);
+
+        p->prox = NULL;
+        ant = p;
     }
-    if(p!=NULL){
-        printf("ID: %d\n",  p->id);
-        printf("Nome: %s\n",  p->nome);
-        printf("Categoria: %s\n",  p->categoria);
-        printf("Ano de Publicacao: %d\n",  p->ano_de_publi);
-        if(p->emprestado){
-            //struct alunos *ant = NULL;
-            q = busca_alunos(q,p->id);
-            if(q!=NULL){
-                printf("Livro esta emprestado emprestado ao aluno de matricula: %s \n",q->matricula);
-            }
-        }
-        else{
-                printf("Livro esta disponivel para retirada na bilblioteca!\n");
-        }
-        printf("\n");
-    }
-    else{
-        printf("Este id nao esta cadastrado.\n");
-    }
+    printf("Alunos carregados com sucesso!\n");
+    fclose(File);
 }
 
-void imprimir_livros(struct livros * cab_livros,struct alunos * q){
-    if (cab_livros->prox == NULL) {
-        printf("Nao ha livros registrados no sistema!\n");
-        return;
+void ler_livros(struct livros *cab,int * num_livros, int * id_livros){
+
+    FILE * File = fopen ("livros.txt","r");//abrimos o arquivo no modo de leitura
+    if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
+        printf("Nao foi possivel abrir o arquivo livros.txt\n");
     }
 
-    struct livros *p = cab_livros->prox;
-    while (p != NULL) {
-        printf("ID: %d\n", p->id );
-        printf("Nome: %s\n", p->nome );
-        printf("Categoria: %s\n", p->categoria );
-        printf("Ano de publicacao: %d\n", p->ano_de_publi );
-        if(p->emprestado){
-            //struct alunos *ant = NULL;
-            q = busca_alunos(q,p->id);
-            if(q!=NULL){
-                printf("O livro esta sob a utilizacao do aluno de matricula: %s\n", q->matricula );
-            }
-        }
-        else{
-            printf("Livro disponivel para emprestimo.");
-        }
-        printf("\n");
-        p = p->prox;
+    char *buffer;// ponteiro para char, utilizado como auxiliar para ler os dados do arquivo.
+    size_t bufsize = 2;// definimos um tamanho inicial, mas poderia ser qualquer outro pois sera mudado utilizando a funcao getline.
+    int tamanho; // tamanho da string.
+    struct livros *ant = cab;// inicialmente ant apontara para o no cabeca
+    struct livros *p;
+    buffer = (char * )malloc (bufsize * sizeof(char));// alocamos memoria para o buffer
+
+    getline(&buffer,&bufsize,File);// lemos a variavel id_livros do arquivo
+    (*id_livros) = atoi(buffer);// transformamos em inteiro e atribuimos a id_livros
+
+    getline(&buffer,&bufsize,File); // o mesmo para num_livros
+    (*num_livros) = atoi(buffer);
+
+    for(int i = 0; i<(*num_livros); i++){// ler num_livros livros.
+        p = ant->prox;
+        p = (struct livros *)malloc(sizeof(struct livros));
+        ant->prox = p;
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->nome, buffer);// copiamos o conteudo da variavel auxiliar buffer para p->nome.
+        p->nome[tamanho-1]='\0';// substituimos o '\n' no fim da string por '\0'
+
+        getline(&buffer,&bufsize,File);
+        p->ano_de_publi = atoi(buffer);
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->categoria, buffer);
+        p->categoria[tamanho-1]='\0';
+
+        getline(&buffer,&bufsize,File);
+        p->ano_de_publi = atoi(buffer);
+
+        getline(&buffer,&bufsize,File);
+        p->id = atoi(buffer);
+
+        getline(&buffer,&bufsize,File);
+        p->emprestado = atoi(buffer);
+
+        getline(&buffer,&bufsize,File);
+        p->id_aluno = atoi(buffer);
+        p->prox = NULL;
+        ant = p;
     }
+    printf("Livros carregados com sucesso!\n");
+    fclose(File);
 }
 
-struct livros * busca_livros(struct livros *cab, int k) {
-    struct livros *p = cab->prox;
-    while (p != NULL && p->id < k) {
-        p = p->prox;
-    }
-    // p = null  : se chave 'k' nao encontrada.
-    // p != null : se p->c = k, entao chave encontrada. Senao, chave nao encontrada.
-    return p;
-}
+void ler_infra(struct infra *cab,int * num_infra){
 
-struct livros * busca_livros2(struct livros *cab, int k, struct livros **ant) {
-    (*ant) = cab;
-    struct livros *p = cab->prox;
-    while (p != NULL && p->id < k) {
-        (*ant) = p;
-        p = p->prox;
-    }
-    // p = null  : se chave 'k' nao encontrada.
-    // p != null : se p->c = k, entao chave encontrada. Senao, chave nao encontrada.
-    return p;
-}
-
-void inserir_livros(struct livros *cab, int * k, int * num_livros) {
-    struct livros *ant = NULL;
-    struct livros *p = busca_livros2(cab, *k, &ant);
-
-    // Criacao e Insercao do novo no com a chave 'k'.
-    p = (struct livros *)malloc(sizeof(struct livros));
-    p->id = *k;
-    p->prox = ant->prox;
-    ant->prox = p;
-    printf("Digite o nome do livro que deseja inserir:\n");
-    limpar(stdin);
-    fgets(p->nome,100,stdin);
-    printf("Digite o ano de publicacao do livro:\n");
-    scanf("%d", &p->ano_de_publi);
-    printf("Digite a categoria do livro:\n");
-    fflush(stdin);
-    fgets(p->categoria,100,stdin);
-    *k= *k + 1;
-    p->emprestado=0;
-    p->id_aluno=-1;
-    *num_livros+=1;
-
-    system(CLEAR);
-    printf("Livro cadastrado com sucesso!\n");
-
-}
-
-void emprestar_livro(struct livros *cab_livros, struct alunos *cab_alunos){
-    int id_aluno;
-    printf("Qual e o id do  aluno que deseja pedir o emprestimo de livro?\n" );
-    scanf("%d",&id_aluno);
-
-    //struct alunos *ant_aluno = NULL;
-    struct alunos *q = busca_alunos(cab_alunos,id_aluno);
-    if(q==NULL){
-        system(CLEAR);
-        printf("Aluno nao encontrado!\n" );
-        return;
+    FILE * File = fopen ("infra.txt","r");//abrimos o arquivo no modo de leitura
+    if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
+        printf("Nao foi possivel abrir o arquivo alunos.txt\n");
     }
 
-    int id_livro;
-    printf("Qual e o id do livro desejado para emprestimo?\n" );
-    scanf("%d",&id_livro);
-    system(CLEAR);
-    //struct livros *ant_livros = NULL;
-    struct livros *p = busca_livros(cab_livros, id_livro);
-    if(p==NULL){
-        system(CLEAR);
-        printf("Livro nao encontrado!\n" );
-        return;
-    }
-    if(p->emprestado==1){
-        system(CLEAR);
-        printf("Livro indisponivel para emprestimo no momento!\n" );
-        return;
-    }
-    q->pendencia=q->pendencia+1;
-    p->emprestado=1;
-    p->id_aluno = id_aluno;
-    system(CLEAR);
-    printf("Livro emprestado com sucesso!\n");
-    return;
-}
+    char *buffer;// ponteiro para char, utilizado como auxiliar para ler os dados do arquivo.
+    size_t bufsize = 2;// definimos um tamanho inicial, mas poderia ser qualquer outro pois sera mudado utilizando a funcao getline.
+    int tamanho;// tamanho da string.
 
-void devolver_livro(struct livros *cab_livros, struct alunos *cab_alunos){
-    printf("Qual e o id do aluno que deseja devolver o livro?\n");
-    int id_aluno;
-    scanf("%d",&id_aluno);
-    //struct alunos *ant_aluno = cab_alunos;
-    struct alunos *p = busca_alunos(cab_alunos,id_aluno);
+    buffer = (char * )malloc (bufsize * sizeof(char));// alocamos memoria para o buffer
 
-    if(p==NULL){
-        system(CLEAR);
-        printf("Aluno nao encontrado!\n");
-        return;
-    }
-    if(p->pendencia==0){
-        system(CLEAR);
-        printf("Este aluno nao possui pendencias com a biblioteca!\n");
-        return;
-    }
+    getline(&buffer,&bufsize,File);// lemos a variavel num_infra do arquivo
+    (*num_infra) = atoi(buffer);// transformamos em inteiro e atribuimos a num_infra
 
-    printf("Qual e o id do livro que deseja devolver?\n");
-    int id_livro;
-    scanf("%d",&id_livro);
+    struct infra *ant = cab;// inicialmente ant apontara para o no cabeca
+    struct infra *p;
+    for(int i = 0; i<(*num_infra); i++){// ler num_infra infraestruturas.
+        p = ant->prox;
+        p = (struct infra *)malloc(sizeof(struct infra));
+        ant->prox = p;
 
-    //struct livros *ant_livro = cab_livros;
-    struct livros *q = busca_livros(cab_livros,id_livro);
-
-    if(q==NULL){
-        system(CLEAR);
-        printf("Livro nao esta cadastrado!\n");
-        return;
+        getline(&buffer,&bufsize,File); // lemos do arquivo e guardamos em buffer
+        p->id = atoi(buffer); // transformamos em inteiro e atribuimos a p->id;
+        getline(&buffer,&bufsize,File);
+        p->tipo = atoi(buffer);
+        getline(&buffer,&bufsize,File);
+        p->ocupado = atoi(buffer);
+        getline(&buffer,&bufsize,File);
+        p->id_aluno = atoi(buffer);
+        p->prox = NULL;
+        ant = p;
     }
-    if(q->emprestado==0){
-        system(CLEAR);
-        printf("Este livro ja se encontra na biblioteca, por favor, verifique o ID do livro e tente novamente.\n");
-    }
-    if(q->id_aluno==p->id){
-        p->pendencia = p->pendencia-1;
-        q->emprestado = 0;
-        system(CLEAR);
-        printf("Livro devolvido com sucesso!\n");
-    }
-    else{
-        printf("O aluno que deseja devolver o livro nao e o mesmo que fez o emprestimo. Por favor, tente novamente.\n");
-    }
-}
-
-void buscar_categoria(struct livros *cab_livros, struct alunos *cab_alunos){
-     if (cab_livros->prox == NULL) {
-        printf("Nao ha livros registrados no sistema!\n");
-        return;
-    }
-    char categoria[100];
-    printf("Digite a categoria que deseja buscar: \n");
-    fflush(stdin);
-    fgets(categoria,100,stdin);
-    system(CLEAR);
-    struct livros *p = cab_livros->prox;
-    int encontrado = 0;
-    while (p != NULL) {
-        if(strcmp(p->categoria,categoria)==0){
-            encontrado = 1;
-            printf("ID: %d\n",  p->id );
-            printf("Nome: %s\n",  p->nome );
-            printf("Categoria: %s\n",  p->categoria );
-            printf("Ano de Publicacao: %d\n",  p->ano_de_publi );
-            if(p->emprestado){
-                //struct alunos *ant = NULL;
-                struct alunos *q = cab_alunos;
-                q = busca_alunos(q,p->id);
-                if(q!=NULL){
-                    printf("Livro esta emprestado emprestado ao aluno de matricula: %s\n" ,q->matricula );
-                }
-            }
-            else{
-                    printf("Livro esta disponivel para retirada na bilblioteca!\n");
-            }
-        printf("\n");
-        }
-        p=p->prox;
-    }
-    if(encontrado == 0){
-        printf("Categoria nao encontrada.\n" );
-    }
-}
-
-void remover_livros(struct livros *cab,int * num_livros) {
-    printf("Digite o id do livro que deseja remover:\n" );
-    int id;
-    scanf("%d",&id);
-    struct livros *ant = cab;
-    struct livros *p = busca_livros2(cab,id,&ant);
-
-    if (p != NULL && p->emprestado==0) {
-        ant->prox = p->prox;
-        system(CLEAR);
-        printf("O livro %s foi removido com sucesso.\n",p->nome);
-        *num_livros-=1;
-        free(p);
-        return;
-    }else if(p == NULL){
-        system(CLEAR);
-        printf("O ID utilizado nao esta cadastrado.\n" );;
-        return;
-    }
-    else if(p->emprestado == 1){
-        system(CLEAR);
-        printf("O livro %s nao pode ser removido pois esta atualmente emprestado\n",p->nome);
-        return;
-    }
+    printf("infraestruturas carregados com sucesso!\n");
+    fclose(File);
 }

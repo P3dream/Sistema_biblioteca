@@ -59,21 +59,21 @@ void salvar_livros(struct livros *cab,int *num_livros,int * id_livros){
         }
         p = p->prox;
     }
-    printf("livros salvos com sucesso!\n");;
+    printf("livros salvos com sucesso!\n");
     fclose(File);
 }
 
 void salvar_infra(struct infra * cab,int * num_infra){
 
     FILE * File;
-    File = fopen ("livros.txt","w");
+    File = fopen ("infra.txt","w");
 
     if(!File){
-        printf("Falha ao abrir o arquivo livros.txt!\n");;
+        printf("Falha ao abrir o arquivo infra.txt!\n");
     }
 
     if (cab->prox == NULL) {
-        printf("Nao ha infraestrutura para ser salva!\n");;
+        printf("Nao ha infraestrutura para ser salva!\n");
         return;
     }
 

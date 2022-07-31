@@ -6,24 +6,24 @@
 #include "carregar_tipos.h"
 
 int main() {
-   // No cabeca sendo utilizado como auxiliar (sem conteudo).
-    struct alunos *cab_alunos = (struct alunos *)malloc(sizeof(struct alunos));
+   // No cabeca sera utilizado como no auxiliar (sem conteudo).
+    struct alunos *cab_alunos = (struct alunos *)malloc(sizeof(struct alunos)); // alocamos a memoria para o no cabeca.
     cab_alunos->prox = NULL;
-    int id_alunos = 0;
-    int num_alunos = 0;
-    //ler_alunos(cab_alunos,&num_alunos,&id_alunos);
+    int id_alunos = 0; // id alunos e a variavel que dara id automatico aos alunos.
+    int num_alunos = 0; // num alunos indicara quantos alunos estao atualmente registrados na biblioteca.
+    ler_alunos(cab_alunos,&num_alunos,&id_alunos); // lemos da memoria os alunos previamente cadastrados.
 
 
-    struct livros *cab_livros = (struct livros *)malloc(sizeof(struct livros));
+    struct livros *cab_livros = (struct livros *)malloc(sizeof(struct livros)); // alocamos a memoria para o no cabeca.
     cab_livros->prox = NULL;
-    int id_livros = 0;
-    int num_livros = 0;
-    //ler_livros(cab_livros,&num_livros,&id_livros);
+    int id_livros = 0;// id livros e a variavel que dara id automatico aos livros.
+    int num_livros = 0;// id livros e a variavel que dara id automatico aos livros.
+    ler_livros(cab_livros,&num_livros,&id_livros);// lemos da memoria os livros previamente cadastrados.
 
-    struct infra *cab_infra = (struct infra *)malloc(sizeof(struct infra));
+    struct infra *cab_infra = (struct infra *)malloc(sizeof(struct infra));// alocamos a memoria para o no cabeca.
     cab_infra->prox = NULL;
-    int num_infra = 0;
-    //ler_infra(cab_infra,&num_infra);
+    int num_infra = 0; // num infra indicara quantas infraestruturas estao atualmente registradas na biblioteca.
+    ler_infra(cab_infra,&num_infra); //lemos da memoria as infraestruturas previamente cadastradas.
 
     int acao;
     while(acao!=20){
@@ -150,9 +150,9 @@ int main() {
                 printf("no meu repositorio do GitHub: https://github.com/P3dream/AEDS1_\n");
                 printf("\n");
              case(20):
-                salvar_alunos(cab_alunos,&num_alunos,&id_alunos);
-                salvar_livros(cab_livros,&num_livros,&id_livros);
-                salvar_infra(cab_infra,&num_infra);
+                salvar_alunos(cab_alunos,&num_alunos,&id_alunos); // salvamos os alunos cadastrados na memoria
+                salvar_livros(cab_livros,&num_livros,&id_livros); // salvamos os livros cadastrados na memoria
+                salvar_infra(cab_infra,&num_infra); // salvamos as infraestruturas cadastradas na memoria
                 break;
         }
     }

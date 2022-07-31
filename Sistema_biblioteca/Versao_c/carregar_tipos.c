@@ -1,34 +1,45 @@
 #include "Cabecalho.h"
+
+
 void ler_alunos(struct alunos *cab,int * num_alunos,int * id_alunos){
+
     FILE * File = fopen ("alunos.txt","r");//abrimos o arquivo no modo de leitura
     if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
         printf("Nao foi possivel abrir o arquivo alunos.txt\n");
     }
 
-    if(fscanf(File, "%d", id_alunos) == 1){
-        fscanf(File,"%d", num_alunos);
-    }
-    else{
-        printf("Nao ha alunos no arquivo para serem carregados.\n");
-        return;
-    }
+    char *buffer;
+    size_t bufsize = 2;
+    int tamanho;
     struct alunos *ant = cab;
     struct alunos *p;
-    /**
-    char *buffer;
-    size_t bufsize = 32;
-    size_t characters;
-    **/
-   // buffer = (char * )malloc (bufsize * sizeof(char));
+    buffer = (char * )malloc (bufsize * sizeof(char));
+
+    getline(&buffer,&bufsize,File);
+    (*id_alunos) = atoi(buffer);
+
+    getline(&buffer,&bufsize,File);
+    (*num_alunos) = atoi(buffer);
+
     for(int i = 0; i<(*num_alunos); i++){
         p = ant->prox;
         p = (struct alunos *)malloc(sizeof(struct alunos));
         ant->prox = p;
-        //characters = getline(&buffer,&bufsize,stdin);
-        fscanf(File,"%s", p->nome);
-        fscanf(File,"%s", p->matricula);
-        fscanf(File,"%d", &p->id);
-        fscanf(File,"%d", &p->pendencia);
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->nome, buffer);
+        p->nome[tamanho-1]='\0';
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->matricula, buffer);
+        p->matricula[tamanho-1]='\0';
+
+        tamanho = getline(&buffer,&bufsize,File);
+        p->id = atoi(buffer);
+
+        tamanho = getline(&buffer,&bufsize,File);
+        p->pendencia = atoi(buffer);
+
         p->prox = NULL;
         ant = p;
     }
@@ -43,65 +54,87 @@ void ler_livros(struct livros *cab,int * num_livros, int * id_livros){
         printf("Nao foi possivel abrir o arquivo livros.txt\n");
     }
 
-    if(fscanf(File, "%d", id_livros) == 1){
-        fscanf(File,"%d", num_livros);
-    }
-     else{
-        printf("Nao ha livros no arquivo para serem carregados.\n");
-        return;
-    }
+    char *buffer;
+    size_t bufsize = 2;
+    int tamanho;
     struct livros *ant = cab;
     struct livros *p;
+    buffer = (char * )malloc (bufsize * sizeof(char));
+
+    getline(&buffer,&bufsize,File);
+    (*id_livros) = atoi(buffer);
+
+    getline(&buffer,&bufsize,File);
+    (*num_livros) = atoi(buffer);
+
     for(int i = 0; i<(*num_livros); i++){
         p = ant->prox;
         p = (struct livros *)malloc(sizeof(struct livros));
         ant->prox = p;
-        fscanf(File,"%s", p->nome);
-        fscanf(File,"%d", &p->ano_de_publi);
-        fscanf(File,"%s", p->categoria);
-        fscanf(File,"%d", &p->id);
-        fscanf(File,"%d", &p->emprestado);
-        fscanf(File,"%d", &p->id_aluno);
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->nome, buffer);
+        p->nome[tamanho-1]='\0';
+
+        getline(&buffer,&bufsize,File);
+        p->ano_de_publi = atoi(buffer);
+
+        tamanho = getline(&buffer,&bufsize,File);
+        strcpy(p->categoria, buffer);
+        p->categoria[tamanho-1]='\0';
+
+        getline(&buffer,&bufsize,File);
+        p->ano_de_publi = atoi(buffer);
+
+        getline(&buffer,&bufsize,File);
+        p->id = atoi(buffer);
+
+        getline(&buffer,&bufsize,File);
+        p->emprestado = atoi(buffer);
+
+        getline(&buffer,&bufsize,File);
+        p->id_aluno = atoi(buffer);
         p->prox = NULL;
         ant = p;
     }
     printf("Livros carregados com sucesso!\n");
     fclose(File);
 }
-/***
+
 void ler_infra(struct infra *cab,int * num_infra){
 
-    ifstream InputStream;
-    InputStream.open("infra.txt");
-    string line;
-
-    if(!InputStream){
-        cout << "Falha ao abrir o arquivo infra.txt!" << endl;
-    }
-    if(get_size("infra.txt") == 0){
-        cout << "Nao ha infraestrutura previamente salva." << endl;
-        return;
-    }
-    else{
-        cout << "Infraestruturas carregadas com sucesso!" << endl;
+    FILE * File = fopen ("infra.txt","r");//abrimos o arquivo no modo de leitura
+    if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
+        printf("Nao foi possivel abrir o arquivo alunos.txt\n");
     }
 
-    getline(InputStream,line);
-    (*num_infra) = stoi(line);
+    char *buffer;
+    size_t bufsize = 2;
+    int tamanho;
+
+    buffer = (char * )malloc (bufsize * sizeof(char));
+
+    getline(&buffer,&bufsize,File);
+    (*num_infra) = atoi(buffer);
+
     struct infra *ant = cab;
     struct infra *p;
     for(int i = 0; i<(*num_infra); i++){
         p = ant->prox;
-        p = new infra();
+        p = (struct infra *)malloc(sizeof(struct infra));
         ant->prox = p;
-        InputStream >> p->id;
-        InputStream >> p->tipo;
-        InputStream >> p->ocupado;
-        InputStream >> p->id_aluno;
+
+        getline(&buffer,&bufsize,File);
+        p->id = atoi(buffer);
+        getline(&buffer,&bufsize,File);
+        p->tipo = atoi(buffer);
+        getline(&buffer,&bufsize,File);
+        p->ocupado = atoi(buffer);
+        getline(&buffer,&bufsize,File);
+        p->id_aluno = atoi(buffer);
         p->prox = NULL;
         ant = p;
     }
-    InputStream.close();
-}
 
-***/
+    fclose(File);
+}
