@@ -2,7 +2,7 @@
 #define OPERACOES_LIVROS_H_INCLUDED
 #include "Cabecalho.h"
 
-struct livros * busca_livros(struct livros *cab, int id);//Nessa funcao, um id especifico é buscado, retornando um ponteiro para o no do livro, caso seja encontrado.
+struct livros * busca_livros(struct livros *cab, int id);//Nessa funcao, um id especifico Ã© buscado, retornando um ponteiro para o no do livro, caso seja encontrado.
 //Passamos o endereco de cabeca de livros e o id que estamos buscando, para percorrer os nos da lista encadeada e verificar se o id do livro e o mesmo que o buscado.
 
 struct livros * busca_livros2(struct livros *cab, int id, struct livros **ant);//Funcao que se assimila ao busca_livros, entretanto, passamos tambem um ponteiro para o no anterior, usada quando uma remocao ou insercao for utilizada.
@@ -32,3 +32,4 @@ void remover_livros(struct livros *cab,int * num_livros);//Nessa funcao, removem
 //Passamos o endereco do no cabeca de livros para fazermos a busca pelo livro de id equivalente ao id digitado pelo usuario. Tambem passamos o no cabeca de alunos para indicar a matricula do aluno que esta com a posse do livro, caso esteja emprestado.
 
 #endif // OPERACOES_LIVROS_H_INCLUDED
+    

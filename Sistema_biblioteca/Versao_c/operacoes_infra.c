@@ -39,7 +39,7 @@ void inserir_infra(struct infra *cab, int *num_infra){
     }
     // Criacao e Insercao do novo no.
     p = (struct infra *)malloc(sizeof(struct infra)); //p aponta para a memoria alocada para o novo no
-    p->id = id;
+    p->id = id; 
     p->prox = ant->prox; ;// p - > aponta para nulo
     ant->prox = p; // ant -> prox aponta para o novo no
     printf("O que voce deseja cadastrar?\n");
@@ -58,9 +58,9 @@ void remover_infra(struct infra *cab,int * num_infra) {
     printf("Digite o id da sala,computador ou armario que deseja remover.\n");
     int id;
     scanf("%d",&id);
-    struct infra *ant = cab; // anterior aponta para cabeca inicalmente
+    struct infra *ant = cab; // anterior aponta para cabeca inicalmente 
     struct infra *p = busca_infra2(cab,id,&ant); // buscamos pelo id desejado, caso seja encontrado p aponta para o no que desejamos remover e ant para o no anterior ao que desejamos remover.
-
+    
     char string_[20];// apenas para ter o nome do tipo de infraestrutura que o usuario escolheu.
 
     if( p != NULL && p->id  == id) { //se o ponteiro for diferente de nulo e p->id for igual ao id que estamos buscando.
@@ -118,7 +118,7 @@ void imprimir_infra(struct infra *cab,struct alunos *q) {
                 printf("O(A) %s esta sob a utilizacao do aluno de matricula: %s \n",string_,q->matricula);
             }
         }
-        else{ // se não.
+        else{ // se nÃ£o.
             printf("O(A) %s esta disponivel para utilizacao.\n",string_);
         }
         printf("\n");
@@ -165,7 +165,7 @@ void emprestar_infra(struct infra *cab_infra,struct alunos *cab_alunos){
         return;
     }
     // caso o id do aluno e da infra sejam validos, e ela nao estiver indispoivel, pode haver o emprestimo.
-    p->ocupado=1;
+    p->ocupado=1; 
     p->id_aluno = id_aluno; // salvamos o id do aluno que pediu o emprestimo, nessa infraestrutura.
     q->pendencia = q->pendencia+1; // aumentamos em um o numero de pendencias.
     system(CLEAR);

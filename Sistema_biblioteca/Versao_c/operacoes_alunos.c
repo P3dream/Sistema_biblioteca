@@ -34,7 +34,7 @@ struct alunos * busca_alunos(struct alunos *cab, int id) {
     return p;
 }
 void imprimir_aluno(struct alunos *cab) {
-    if (cab->prox == NULL) { // se nao houver nenhum nó apos o cabeca
+    if (cab->prox == NULL) { // se nao houver nenhum nÃ³ apos o cabeca
         printf("Nao ha alunos registrados no sistema!\n");
         return;
     }
@@ -42,7 +42,7 @@ void imprimir_aluno(struct alunos *cab) {
     printf("Digite o id do aluno que deseja buscar: \n");
     scanf("%d",&id);
     system(CLEAR); // limpa o console
-    struct alunos *p = busca_alunos(cab,id);
+    struct alunos *p = busca_alunos(cab,id); 
     if(p!=NULL && p->id==id){ // se o id for encontrado, printamos as inforcacoes do aluno
         printf("ID: %d\n",p->id);
         printf("Nome: %s\n",p->nome);
@@ -63,7 +63,7 @@ void imprimir_aluno(struct alunos *cab) {
 
 struct alunos * busca_alunos2(struct alunos *cab, int id, struct alunos **ant) {
     (*ant) = cab; // definimos o ant como cabeca inicialmente
-    struct alunos *p = cab->prox; // cabeca = cabeca -> prox
+    struct alunos *p = cab->prox; // cabeca = cabeca -> prox 
     while (p != NULL && p->id < id) { // e procuramos pelo id desejado
         (*ant) = p;
         p = p->prox;

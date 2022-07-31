@@ -13,7 +13,7 @@
     #define limpar fflush
 #endif
 
-struct alunos{
+struct alunos{ 
     char nome[100];  // nome do aluno
     char matricula[100]; // matricula do aluno
     int id; // id do aluno
