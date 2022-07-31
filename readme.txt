@@ -2,7 +2,8 @@ O sistema da biblioteca, foi desenvolvido para a disciplina de Algoritimos e Est
 Inicialmente, foi desenvolvido em C++, entretanto, como não foi possivel implementar a interface grafica, foi feita a sua
 implementação na linguagem C.
 
-Nesse sistema, é possivel:
+Nesse sistema, são utilizadas listas encadeadas, para otimizar a utilização de memória do sistema. 
+E nele é possivel:
 
 Registrar um aluno;
 Imprimir todos os alunos registrados;
