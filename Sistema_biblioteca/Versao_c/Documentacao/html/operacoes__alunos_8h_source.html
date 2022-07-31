@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto Bilioteca AEDS: Código-Fonte de C:/Users/pedro/Desktop/Trabalho_aeds/Sistema_biblioteca/Versao_c/operacoes_alunos.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projeto Bilioteca AEDS<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Sistema da biblioteca do CEFET/RJ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e54bb80c578fac4626a24e4d03ef65da.html">Trabalho_aeds</a></li><li class="navelem"><a class="el" href="dir_8b2c0cff94894126eb8a442ca50d02d8.html">Sistema_biblioteca</a></li><li class="navelem"><a class="el" href="dir_d29833579dc518e6a2b03fba0ad15cb9.html">Versao_c</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">operacoes_alunos.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef OPERACOES_ALUNOS_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define OPERACOES_ALUNOS_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Cabecalho.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keywordtype">void</span> imprimir_aluno(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab);<span class="comment">//Nessa funcao, e possivel buscar um aluno especifico por id.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//Passamos o endereco do no cabeca de alunos para buscarmos pelo id desejado pelo usuario e imprimimos na tela, caso seja encontrado. Sao impressas todas as informacoes associadas a esse aluno.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">void</span> imprimir_alunos(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab);<span class="comment">//Nessa funcao, todos os alunos registrados sao printados.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//Passamos o endereco do no cabeca de alunos para percorrer os nos da lista encadeada, printando os dados dos alunos.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct </span><a class="code hl_struct" href="structalunos.html">alunos</a> * busca_alunos(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);<span class="comment">//Nessa funcao, um id especifico é buscado, retornando um ponteiro para o no do aluno, caso seja encontrado.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//Passamos o endereco de cabeca de alunos e o id que estamos buscando, para percorrer os nos da lista encadeada e verificar se o id do aluno e o mesmo que o buscado.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">struct </span><a class="code hl_struct" href="structalunos.html">alunos</a> * busca_alunos2(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab, <span class="keywordtype">int</span> k, <span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> **ant);<span class="comment">//Funcao que se assimila ao busca_aluno, entretanto, passamos tambem um ponteiro para o no anterior, usada quando uma remocao ou insercao for utilizada.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//Passamos o endereco do no cabeca de alunos para poder fazer buscas nos alunos registrados, o id buscado, e o um ponteiro para o no anterior.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">struct </span><a class="code hl_struct" href="structalunos.html">alunos</a> * busca_alunos_matricula(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> * cab, <span class="keywordtype">char</span> * matricula, <span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> **ant);<span class="comment">//Funcao utilizada na hora de inserir alunos, para conferir se a matricula, que o usuario deseja cadastrar, ja esta cadastrada.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//Passamos o endereco do no cabeca de alunos, a matricula para verificar se ela ja existe e um ponteiro para o no anterior.  </span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> inserir_alunos(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab, <span class="keywordtype">int</span> * <span class="keywordtype">id</span>, <span class="keywordtype">int</span> * num_alunos);<span class="comment">// Nessa funcao, e possivel inserir um novo no na lista encadeada, onde serao armazenados os dados de um novo aluno caso ele nao tenha sido previamente cadastrado.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//Passamos o endereco do no cabeca de alunos, o id automatico e o numero total de alunos que sera aumentado, caso haja a adicao de um amigo.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> remover_alunos(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab, <span class="keywordtype">int</span> * num_alunos); <span class="comment">//Nessa funcao, e feita a remocao de um aluno ( no ) da lista encadeada, liberando a memoria que ele estava utilizando.</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">//Passamos o endereco do no cabeca de alunos para buscarmos o no de id que o usuario deseja deletar e o numero total de alunos para ser modificado caso haja remocao.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif </span><span class="comment">// OPERACOES_ALUNOS_H_INCLUDED</span></div>
+<div class="ttc" id="astructalunos_html"><div class="ttname"><a href="structalunos.html">alunos</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto Bilioteca AEDS: Código-Fonte de C:/Users/pedro/Desktop/Trabalho_aeds/Sistema_biblioteca/Versao_c/carregar_tipos.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projeto Bilioteca AEDS<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Sistema da biblioteca do CEFET/RJ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e54bb80c578fac4626a24e4d03ef65da.html">Trabalho_aeds</a></li><li class="navelem"><a class="el" href="dir_8b2c0cff94894126eb8a442ca50d02d8.html">Sistema_biblioteca</a></li><li class="navelem"><a class="el" href="dir_d29833579dc518e6a2b03fba0ad15cb9.html">Versao_c</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">carregar_tipos.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CARREGAR_TIPOS_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CARREGAR_TIPOS_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keywordtype">void</span> ler_alunos(<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab, <span class="keywordtype">int</span> * num_alunos, <span class="keywordtype">int</span> * id_alunos);<span class="comment">//Funcao utilizada para carregar do arquivo &quot;alunos.txt&quot;, dados previamente inseridos pelo usuario.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//passamos como parametro o no cabeca de alunos para salva-los na lista encadeada, o numero de alunos para mantermos o controle de quantos alunos estao atualmente cadastrados na biblioteca e por ultimo o numero do proximo id automatico.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span> ler_infra(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab,<span class="keywordtype">int</span> * num_infra);<span class="comment">//Funcao utilizada para carregar do arquivo &quot;infra.txt&quot;, dados previamente inseridos pelo usuario.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//passamos como parametro o no cabeca de infra para salva-las na lista encadeada e o numero de infraestruturas para mantermos o controle de quantas infraestruturas estao atualmente cadastradas na biblioteca.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">void</span> ler_livros(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab,<span class="keywordtype">int</span> * num_livros, <span class="keywordtype">int</span> * id_livros);<span class="comment">//Funcao utilizada para carregar do arquivo &quot;livros.txt&quot;, dados previamente inseridos pelo usuario.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//passamos como parametro o no cabeca de livros para salva-los na lista encadeada, o numero de livros para mantermos o controle de quantos livros estao atualmente cadastrados na biblioteca e por ultimo o numero do proximo id automatico.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif </span><span class="comment">// CARREGAR_TIPOS_H_INCLUDED</span></div>
+<div class="ttc" id="astructalunos_html"><div class="ttname"><a href="structalunos.html">alunos</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:16</div></div>
+<div class="ttc" id="astructinfra_html"><div class="ttname"><a href="structinfra.html">infra</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:34</div></div>
+<div class="ttc" id="astructlivros_html"><div class="ttname"><a href="structlivros.html">livros</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

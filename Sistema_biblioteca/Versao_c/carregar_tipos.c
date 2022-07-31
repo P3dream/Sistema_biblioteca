@@ -1,13 +1,23 @@
 #include "Cabecalho.h"
 
 
+
 void ler_alunos(struct alunos *cab,int * num_alunos,int * id_alunos){
     
     FILE * File = fopen ("alunos.txt","r");//abrimos o arquivo no modo de leitura
     if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
         printf("Nao foi possivel abrir o arquivo alunos.txt\n");
+        return;
     }
-
+    
+    fseek(File, 0L, SEEK_END);// vamos até o fim do arquivo
+    int tamanho_arq = ftell(File);// checamos o tamanho dele.
+    if(tamanho_arq <=0){// se o arquivo for vazio
+        puts("Nao ha alunos para serem carregados.");
+        return;
+    }
+    rewind(File); // se nao for vazio, voltamos para o inicio do arquivo.
+    
     char *buffer; // ponteiro para char, utilizado como auxiliar para ler os dados do arquivo.
     size_t bufsize = 2; // definimos um tamanho inicial, mas poderia ser qualquer outro pois sera mudado utilizando a funcao getline.
     int tamanho; // tamanho da string.
@@ -15,7 +25,7 @@ void ler_alunos(struct alunos *cab,int * num_alunos,int * id_alunos){
     struct alunos *p;
     buffer = (char * )malloc (bufsize * sizeof(char)); // alocamos memoria para o buffer
     
-    getline(&buffer,&bufsize,File); // lemos a variavel id_alunos do arquivo
+    if(getline(&buffer,&bufsize,File)); // lemos a variavel id_alunos do arquivo
     (*id_alunos) = atoi(buffer); // transformamos em inteiro  e atribuimos a id_alunos
     
     getline(&buffer,&bufsize,File); // o mesmo para num_alunos
@@ -45,6 +55,7 @@ void ler_alunos(struct alunos *cab,int * num_alunos,int * id_alunos){
     }
     printf("Alunos carregados com sucesso!\n");
     fclose(File);
+    free(buffer);
 }
 
 void ler_livros(struct livros *cab,int * num_livros, int * id_livros){
@@ -52,8 +63,17 @@ void ler_livros(struct livros *cab,int * num_livros, int * id_livros){
     FILE * File = fopen ("livros.txt","r");//abrimos o arquivo no modo de leitura
     if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
         printf("Nao foi possivel abrir o arquivo livros.txt\n");
+        return;
     }
-
+    
+    fseek(File, 0L, SEEK_END);// vamos até o fim do arquivo
+    int tamanho_arq = ftell(File);// checamos o tamanho dele.
+    if(tamanho_arq <=0){// se o arquivo for vazio
+        puts("Nao ha livros para serem carregados.");
+        return;
+    }
+    rewind(File); // se nao for vazio, voltamos para o inicio do arquivo.
+    
     char *buffer;// ponteiro para char, utilizado como auxiliar para ler os dados do arquivo.
     size_t bufsize = 2;// definimos um tamanho inicial, mas poderia ser qualquer outro pois sera mudado utilizando a funcao getline.
     int tamanho; // tamanho da string.
@@ -66,7 +86,7 @@ void ler_livros(struct livros *cab,int * num_livros, int * id_livros){
     
     getline(&buffer,&bufsize,File); // o mesmo para num_livros
     (*num_livros) = atoi(buffer);
-    
+    //printf("Num livros: %d",*num_livros);
     for(int i = 0; i<(*num_livros); i++){// ler num_livros livros.
         p = ant->prox;
         p = (struct livros *)malloc(sizeof(struct livros));
@@ -84,9 +104,6 @@ void ler_livros(struct livros *cab,int * num_livros, int * id_livros){
         p->categoria[tamanho-1]='\0';
         
         getline(&buffer,&bufsize,File);
-        p->ano_de_publi = atoi(buffer);
-        
-        getline(&buffer,&bufsize,File);
         p->id = atoi(buffer);
         
         getline(&buffer,&bufsize,File);
@@ -99,6 +116,7 @@ void ler_livros(struct livros *cab,int * num_livros, int * id_livros){
     }
     printf("Livros carregados com sucesso!\n");
     fclose(File);
+    free(buffer);
 }
 
 void ler_infra(struct infra *cab,int * num_infra){
@@ -106,8 +124,17 @@ void ler_infra(struct infra *cab,int * num_infra){
     FILE * File = fopen ("infra.txt","r");//abrimos o arquivo no modo de leitura
     if(!File){ // se nao conseguir abrir o arquivo e indicado um erro
         printf("Nao foi possivel abrir o arquivo alunos.txt\n");
+        return;
     }
-
+    
+    fseek(File, 0L, SEEK_END);// vamos até o fim do arquivo
+    int tamanho_arq = ftell(File);// checamos o tamanho dele.
+    if(tamanho_arq <=0){// se o arquivo for vazio
+        puts("Nao ha infraestruturas para serem carregadas.\n");
+        return;
+    }
+    rewind(File); // se nao for vazio, voltamos para o inicio do arquivo.
+    
     char *buffer;// ponteiro para char, utilizado como auxiliar para ler os dados do arquivo.
     size_t bufsize = 2;// definimos um tamanho inicial, mas poderia ser qualquer outro pois sera mudado utilizando a funcao getline.
     int tamanho;// tamanho da string.
@@ -137,4 +164,5 @@ void ler_infra(struct infra *cab,int * num_infra){
     }
     printf("infraestruturas carregados com sucesso!\n");
     fclose(File);
+    free(buffer);
 }

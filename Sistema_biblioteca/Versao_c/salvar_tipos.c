@@ -58,6 +58,7 @@ void salvar_livros(struct livros *cab,int *num_livros,int * id_livros){
         else{
             fprintf(File,"%d\n",0);
         }
+        fprintf(File,"%d\n",p->id_aluno);
         p = p->prox;
     }
     printf("livros salvos com sucesso!\n");
@@ -98,4 +99,3 @@ void salvar_infra(struct infra * cab,int * num_infra){
     printf("Infraestruturas salvas com sucesso!\n");
     fclose(File);
 }
-

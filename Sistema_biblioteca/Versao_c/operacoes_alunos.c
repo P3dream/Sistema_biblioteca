@@ -73,9 +73,11 @@ struct alunos * busca_alunos2(struct alunos *cab, int id, struct alunos **ant) {
     return p;
 }
 
-struct alunos * busca_alunos_matricula(struct alunos * cab,char * matricula){
+struct alunos * busca_alunos_matricula(struct alunos * cab,char * matricula, struct alunos **ant){
+    (*ant) = cab;
     struct alunos *p = cab->prox;
     while (p != NULL && (strcmp(p->matricula,matricula)!=0)) {
+        (*ant) = p;
         p = p->prox;
     }
     // p = null  : se matricula nao encontrada.
@@ -83,35 +85,36 @@ struct alunos * busca_alunos_matricula(struct alunos * cab,char * matricula){
     return p;
 };
 
+
 void inserir_alunos(struct alunos *cab, int * k, int * num_alunos) {
     struct alunos *ant = NULL;
     char matricula[100];
     printf("Digite a matricula do aluno que deseja inserir:\n");
-    limpar(stdin); // limpamos o lixo de sdin.
-    fgets(matricula,100,stdin); // recebemos matricula como entrada do usuario.
-    system(CLEAR); // limpamos o console.
-    struct alunos *p = busca_alunos_matricula(cab,matricula); // buscamos pela matricula digitada, para verificar se ja nao esta cadastrada.
+    limpar(stdin);// limpamos o lixo de sdin.
+    fgets(matricula,100,stdin);// recebemos matricula como entrada do usuario.
+    matricula[strcspn(matricula, "\n")] = 0;// retira o '\n' do final.
+    system(CLEAR);// limpamos o console.
+    struct alunos *p = busca_alunos_matricula(cab,matricula,&ant);// buscamos pela matricula digitada, para verificar se ja nao esta cadastrada.
 
     if(p!=NULL){// se achar
         printf("Aluno ja possui cadastro na biblioteca!\n");
         return;
     }
     //Criacao e Insercao do novo.
-    p = (struct alunos *)malloc(sizeof(struct alunos)); //p recebe o endereco da memoria alocada para o novo no.
-    p->id = *k; // atribuimos o id automatico.
-    p->prox = ant->prox; // p-> prox = NULL.
-    ant->prox = p; // o no anterior aponta para o novo no.
+    p = (struct alunos *)malloc(sizeof(struct alunos));//p recebe o endereco da memoria alocada para o novo no.
+    p->id = *k;// atribuimos o id automatico.
+    p->prox = ant->prox;// p-> prox = NULL.
+    ant->prox = p;// o no anterior aponta para o novo no.
     printf("Digite o nome do aluno que deseja cadastrar:\n");
     limpar(stdin); // limpa  lixo de stdin.
-    fgets(p->nome,100,stdin); // recebe p->nome.
-    p->nome[strcspn(p->nome, "\n")] = 0; // retira o '\n' do final.
-    matricula[strcspn(matricula, "\n")] = 0; // retira o '\n' do final.
-    strcpy(p->matricula, matricula);//p->matricula=matricula;
-    p->pendencia=0; // numero de pendencias inicialmente = 0.
-    system(CLEAR); // limpa o console.
+    fgets(p->nome,100,stdin);// recebe p->nome.
+    p->nome[strcspn(p->nome, "\n")] = 0;// retira o '\n' do final.
+    strcpy(p->matricula, matricula);//p->matricula=matricula; 
+    p->pendencia=0;// numero de pendencias inicialmente = 0.
+    system(CLEAR);// limpa o console.
     printf("Cadastro realizado com sucesso!\n");
-    *k= *k + 1; // soma 1 no id automatico.
-    *num_alunos+=1; // soma 1 no numero de alunos cadastrados.
+    *k= *k + 1;// soma 1 no id automatico.
+    *num_alunos+=1;// soma 1 no numero de alunos cadastrados.
 }
 void remover_alunos(struct alunos *cab,int * num_alunos) {
     printf("Digite o id do aluno que deseja remover:\n");
@@ -131,6 +134,6 @@ void remover_alunos(struct alunos *cab,int * num_alunos) {
         printf("O ID utilizado nao esta cadastrado.\n");
     }
     else if(p->pendencia != 0){ // se o id for encontrado mas o aluno possui pendencias com a biblioteca.
-        printf("O cadastro nao pode ser excluido pois existem pendencias associadas ao aluno: %s  ID: %d  Matricula: %s",p->nome,p->id,p->matricula);
+        printf("O cadastro nao pode ser excluido pois existem pendencias associadas ao aluno: %s  ID: %d  Matricula: %s\n",p->nome,p->id,p->matricula);
     }
 }

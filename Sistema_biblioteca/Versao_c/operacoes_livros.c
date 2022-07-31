@@ -17,7 +17,7 @@ void imprimir_livro(struct livros *cab, struct alunos *q) {
     while (p->id != id && p->prox!=NULL) { // enquanto o id do no for diferente do id buscado.
         p = p->prox;
     }
-    if(p!=NULL){ // se o no com o id buscado for encontrado, printamos as informacoes associadas a ele.
+    if(p!=NULL && p->id==id){ // se o no com o id buscado for encontrado, printamos as informacoes associadas a ele.
         printf("ID: %d\n",  p->id);
         printf("Nome: %s\n",  p->nome);
         printf("Categoria: %s\n",  p->categoria);
@@ -56,7 +56,7 @@ void imprimir_livros(struct livros * cab_livros,struct alunos * q){
             }
         }
         else{
-            printf("Livro disponivel para emprestimo.");
+            printf("Livro disponivel para emprestimo.\n");
         }
         printf("\n");
         p = p->prox;
@@ -201,6 +201,7 @@ void devolver_livro(struct livros *cab_livros, struct alunos *cab_alunos){
     if(q->id_aluno==p->id){// se o id do aluno for o mesmo que pediu o emprestimo do livro.
         p->pendencia = p->pendencia-1; // diminuimos em um as pendencias desse aluno.
         q->emprestado = 0; //o livro volta a ficar disponivel.
+        q->id_aluno = -1;
         system(CLEAR);// limpamos o console
         printf("Livro devolvido com sucesso!\n");
     }
@@ -218,6 +219,8 @@ void buscar_categoria(struct livros *cab_livros, struct alunos *cab_alunos){
     printf("Digite a categoria que deseja buscar: \n");
     limpar(stdin);// limpamos o lixo de stdin.
     fgets(categoria,100,stdin); // lemos a categoria.
+    categoria[strcspn(categoria, "\n")] = 0;// retira o '\n' do final.
+    
     system(CLEAR);// limpamos o console.
     struct livros *p = cab_livros->prox; // p aponta para o primeiro no valido de livros.
     int encontrado = 0; // funcionara como booleano

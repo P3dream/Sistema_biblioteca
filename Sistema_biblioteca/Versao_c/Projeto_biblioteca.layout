@@ -2,19 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="operacoes_livros.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="carregar_tipos.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3519" topLine="0" />
+			<Cursor1 position="1281" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="operacoes_livros.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="operacoes_alunos.c" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5613" topLine="103" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6119" topLine="110" />
+			<Cursor1 position="4259" topLine="84" />
 		</Cursor>
 	</File>
 	<File name="carregar_tipos.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,9 +17,9 @@
 			<Cursor1 position="3965" topLine="103" />
 		</Cursor>
 	</File>
-	<File name="Cabecalho.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="operacoes_livros.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="122" topLine="6" />
+			<Cursor1 position="5613" topLine="103" />
 		</Cursor>
 	</File>
 	<File name="salvar_tipos.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,14 +27,24 @@
 			<Cursor1 position="2465" topLine="62" />
 		</Cursor>
 	</File>
-	<File name="operacoes_alunos.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2405" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="operacoes_infra.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3691" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="operacoes_alunos.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="103" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6119" topLine="110" />
+		</Cursor>
+	</File>
+	<File name="Cabecalho.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="117" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="salvar_tipos.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
@@ -47,19 +52,14 @@
 			<Cursor1 position="1183" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="operacoes_livros.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3519" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="operacoes_infra.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="12547" topLine="278" />
-		</Cursor>
-	</File>
-	<File name="operacoes_alunos.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6047" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="carregar_tipos.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1295" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

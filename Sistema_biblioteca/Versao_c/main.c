@@ -147,7 +147,7 @@ int main() {
             case(19):
                 system(CLEAR);
                 printf("Voce pode encontrar o codigo fonte e a documentacao desse projeto\n");
-                printf("no meu repositorio do GitHub: https://github.com/P3dream/AEDS1_\n");
+                printf("no meu repositorio do GitHub: https://github.com/P3dream/Sistema_biblioteca\n");
                 printf("\n");
              case(20):
                 salvar_alunos(cab_alunos,&num_alunos,&id_alunos); // salvamos os alunos cadastrados na memoria

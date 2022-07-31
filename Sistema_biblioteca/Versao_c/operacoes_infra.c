@@ -87,7 +87,7 @@ void remover_infra(struct infra *cab,int * num_infra) {
         return;
     }
     else if(p->ocupado == 1){
-        printf("O cadastro nao pode ser excluido pois %s esta sendo utilizado pelo aluno: %d \n",string_, p->id_aluno);
+        printf("O cadastro nao pode ser excluido pois %s atualmente esta emprestado. \n",string_);
     }
 }
 
@@ -113,9 +113,9 @@ void imprimir_infra(struct infra *cab,struct alunos *q) {
         printf("Tipo: %s\n",string_);
         if(p->ocupado){ // se estiver emprestada a um aluno.
             //struct alunos *ant = NULL;
-            q = busca_alunos(q,p->id); // buscamos o aluno que pediu o emprestimo da infraestrutura.
+            q = busca_alunos(q,p->id_aluno); // buscamos o aluno que pediu o emprestimo da infraestrutura.
             if(q!=NULL){
-                printf("O(A) %s esta sob a utilizacao do aluno de matricula: %s \n",string_,q->matricula);
+                printf("%s esta sob a utilizacao do aluno de matricula: %s \n",string_,q->matricula);
             }
         }
         else{ // se não.
@@ -196,8 +196,7 @@ void devolver_infra(struct infra *cab_infra,struct alunos * cab_alunos){
     int id_infra;
     scanf("%d",&id_infra);
 
-    struct infra *q = busca_infra(cab_infra,id_aluno); // verificamos se o id da infraestrutura esta cadastrado.
-
+    struct infra *q = busca_infra(cab_infra,id_infra); // verificamos se o id da infraestrutura esta cadastrado.
     if(q==NULL){ // se nao for valido.
         system(CLEAR); // limpamos o console
         printf("Esse ID de infraestrutura nao esta cadastrado!\n");
@@ -206,11 +205,13 @@ void devolver_infra(struct infra *cab_infra,struct alunos * cab_alunos){
     if(q->ocupado==0){
         system(CLEAR); // limpamos o console
         printf("Essa infraestrutura ja se encontra vaga, por favor, verifique o ID e tente novamente.\n");
+        return;
     }
     // apos as verificacoes, se estiver tudo certo e for o aluno que pediu o emprestimo, devolvendo.
     if ( q->id_aluno == p->id ){
         p->pendencia = p->pendencia-1; // diminuimos em um as pendencias do aluno com a biblioteca.
         q->ocupado = 0; // desocupamos a infraestrutura.
+        q->id_aluno = -1;
         system(CLEAR); // limpamos o console.
         char string_[20];
         if(q->tipo==1){
@@ -264,7 +265,7 @@ void imprime_infra_por_tipo(struct infra *cab,struct alunos *q){
         printf("Tipo: %s\n",string_);
         if(p->ocupado){ // se estiver emprestada, printa as informacoes do aluno que pediu o emprestimo.
             //struct alunos *ant = NULL;
-            q = busca_alunos(q,p->id); // busca pelo no do aluno que pediu o emprestimo para imprimir sua matricula.
+            q = busca_alunos(q,p->id_aluno); // busca pelo no do aluno que pediu o emprestimo para imprimir sua matricula.
             if(q!=NULL){
                 printf("O(A) %s esta sob a utilizacao do aluno de matricula: %s\n",string_,q->matricula);
             }
@@ -299,7 +300,7 @@ void buscar_infra_por_id(struct infra *cab, struct alunos *q){
         }
 
         if(p->ocupado){ // se a Infraestrutura estiver ocupada
-            q = busca_alunos(q,p->id); // buscamos pelas informacoes do aluno associado a essa Infraestrutura para printar sua matricula.
+            q = busca_alunos(q,p->id_aluno); // buscamos pelas informacoes do aluno associado a essa Infraestrutura para printar sua matricula.
             if(q!=NULL){
                 printf("Infraestrutura emprestada ao aluno de matricula: %s",q->matricula);
             }

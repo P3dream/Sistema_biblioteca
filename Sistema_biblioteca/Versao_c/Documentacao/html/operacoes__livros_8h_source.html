@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto Bilioteca AEDS: Código-Fonte de C:/Users/pedro/Desktop/Trabalho_aeds/Sistema_biblioteca/Versao_c/operacoes_livros.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projeto Bilioteca AEDS<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Sistema da biblioteca do CEFET/RJ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e54bb80c578fac4626a24e4d03ef65da.html">Trabalho_aeds</a></li><li class="navelem"><a class="el" href="dir_8b2c0cff94894126eb8a442ca50d02d8.html">Sistema_biblioteca</a></li><li class="navelem"><a class="el" href="dir_d29833579dc518e6a2b03fba0ad15cb9.html">Versao_c</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">operacoes_livros.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef OPERACOES_LIVROS_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define OPERACOES_LIVROS_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Cabecalho.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">struct </span><a class="code hl_struct" href="structlivros.html">livros</a> * busca_livros(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);<span class="comment">//Nessa funcao, um id especifico é buscado, retornando um ponteiro para o no do livro, caso seja encontrado.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//Passamos o endereco de cabeca de livros e o id que estamos buscando, para percorrer os nos da lista encadeada e verificar se o id do livro e o mesmo que o buscado.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">struct </span><a class="code hl_struct" href="structlivros.html">livros</a> * busca_livros2(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab, <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> **ant);<span class="comment">//Funcao que se assimila ao busca_livros, entretanto, passamos tambem um ponteiro para o no anterior, usada quando uma remocao ou insercao for utilizada.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//Passamos o endereco do no cabeca de livros para poder fazer buscas nos livros registrados, o id buscado, e o um ponteiro para o no anterior.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">void</span> inserir_livros(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab, <span class="keywordtype">int</span> * <span class="keywordtype">id</span>,<span class="keywordtype">int</span> * num_livros);<span class="comment">// Nessa funcao, e possivel inserir um novo no na lista encadeada, onde serao armazenados os dados de um novo livro caso ele nao tenha sido previamente cadastrado.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//Passamos o endereco do no cabeca de livros, o id automatico e o numero total de livros que sera aumentado, caso haja a adicao de um amigo.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> imprimir_livro(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab,<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab_alunos);<span class="comment">//Nessa funcao, e possivel buscar um livro especifico por id.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//Passamos o endereco do no cabeca de livros para buscarmos pelo id desejado pelo usuario e imprimimos na tela, caso seja encontrado. Sao impressas todas as informacoes associadas a esse livro.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> buscar_categoria(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab,<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab_alunos);<span class="comment">//Nessa funcao, buscamos pela categoria que o usuario deseja filtrar e printamos as livros com a categoria desejada.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//Passamos o endereco do no cabeca de livros para buscarmos pela categoria desejada, e o endereco do no cabeca de alunos para indicar a matricula do aluno para quem o livro estiver emprestado, caso esteja.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> imprimir_livros(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab,<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab_alunos);<span class="comment">//Nessa funcao, todos os livros registrados sao printados.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//Passamos o endereco do no cabeca de livros para percorrer os nos da lista encadeada, printando os dados dos livros.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> emprestar_livro(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab_livros, <span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab_alunos);<span class="comment">//Nessa funcao, um livro e emprestado a um aluno, aumentando em um o numero de pendencias de um aluno, e indicando que o livro esta emprestado, tambem salva o id do aluno que pediu o emprestimo.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//Passamos o endereco do no cabeca de livros para fazermos buscas e o endereco do no cabeca de alunos para realizar o emprestimo, caso possivel.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> devolver_livro(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab_livros, <span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab_alunos);<span class="comment">//Nessa funcao, um livro pode ser devolvido por um aluno, caso ele tenha sido previamente pego por um aluno, e so pode ser devolvido pelo aluno que o pegou.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//Passamos o endereco do no cabeca de livros para fazermos a busca do livro que o aluno deseja buscar e o no cabeca de alunos para verificar se ele e realmente o que pediu o emprestimo, para fazer a devolucao.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> remover_livros(<span class="keyword">struct</span> <a class="code hl_struct" href="structlivros.html">livros</a> *cab,<span class="keywordtype">int</span> * num_livros);<span class="comment">//Nessa funcao, removemos um livro (no) que possui o id recebido pela funcao, caso esteja registrado e nao emprestado, da lista encadeada.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//Passamos o endereco do no cabeca de livros para fazermos a busca pelo livro de id equivalente ao id digitado pelo usuario. Tambem passamos o no cabeca de alunos para indicar a matricula do aluno que esta com a posse do livro, caso esteja emprestado.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">// OPERACOES_LIVROS_H_INCLUDED</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
+<div class="ttc" id="astructalunos_html"><div class="ttname"><a href="structalunos.html">alunos</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:16</div></div>
+<div class="ttc" id="astructlivros_html"><div class="ttname"><a href="structlivros.html">livros</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

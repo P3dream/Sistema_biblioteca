@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto Bilioteca AEDS: Código-Fonte de C:/Users/pedro/Desktop/Trabalho_aeds/Sistema_biblioteca/Versao_c/operacoes_infra.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projeto Bilioteca AEDS<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Sistema da biblioteca do CEFET/RJ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e54bb80c578fac4626a24e4d03ef65da.html">Trabalho_aeds</a></li><li class="navelem"><a class="el" href="dir_8b2c0cff94894126eb8a442ca50d02d8.html">Sistema_biblioteca</a></li><li class="navelem"><a class="el" href="dir_d29833579dc518e6a2b03fba0ad15cb9.html">Versao_c</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">operacoes_infra.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef OPERACOES_INFRA_H_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define OPERACOES_INFRA_H_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Cabecalho.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">struct </span><a class="code hl_struct" href="structinfra.html">infra</a> * busca_infra(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);<span class="comment">//Nessa funcao, buscamos por um id para verificar se ele esta cadastrado, retornamos um ponteiro para o no, caso seja encontrado, ou para nulo, caso contrario.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//Passamos o endereco do no cabeca de infra para poder fazer buscas nas infraestruturas registradas, e o id buscado.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">struct </span><a class="code hl_struct" href="structinfra.html">infra</a> * busca_infra2(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab, <span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> **ant);<span class="comment">//Funcao que se assimila ao busca_infra, entretanto, passamos tambem um ponteiro para o no anterior, usada quando uma remocao ou insercao for utilizada.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//Passamos o endereco do no cabeca de infra para para poder fazer buscas nas infraestruturas registradas, o id buscado, e o um ponteiro para o no anterior.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">void</span> inserir_infra(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab,<span class="keywordtype">int</span> * num_infra);<span class="comment">//Nessa funcao, inserimos um novo no na nossa lista encadeada de infraestruturas.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//Passamos o endereco do no cabeca de infra para chegarmos ao ultimo no, e adicionar um novo, em sequencia. Num_infra, que e o numero de infraestruturas cadastradas e passado pois sera atualizado.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> remover_infra(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab,<span class="keywordtype">int</span> * num_infra);<span class="comment">//Nessa funcao, removemos um no especifico, caso o id do aluno que o usuario deseja remover seja encontrado.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//Passamos o endereco do no cabeca de infra para chegarmos ate o no que possui o id buscado. O numero de estruturas cadastradas e atualizado.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> imprimir_infra(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab, <span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *q);<span class="comment">//Nessa funcao, e imprimido na tela a estrutura buscada pelo usuario, caso o id dela seja encontrado, mostrando, tambem, a matricula do aluno que esta utilizando-a, caso esteja ocupada.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//Passamos o endereco do no cabeca de infra para chegarmos ate o no que possui o id buscado. Tambem passamos o endereco do no cabeca de alunos para verificar a matricula do aluno que esta utilizando-a, caso esteja emprestada.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> emprestar_infra(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab_infra,<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *cab_alunos);<span class="comment">//Nessa funcao, um uma infraestura e emprestada a um aluno, aumentando em um o numero de pendencias de um aluno, e indicando que a infraestrutura esta emprestada, tambem salva o id do aluno que pediu o emprestimo.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//Passamos o endereco do no cabeca de infra para fazermos buscas e o endereco do no cabeca de alunos para realizar o emprestimo, caso possivel.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> devolver_infra(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab_infra,<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> * cab_alunos);<span class="comment">//Nessa funcao, uma infraestrutura e emprestada a um aluno, aumentando em um o numero de pendencias de um aluno, e indicando que a infraestrutura esta emprestada, tambem salva o id do aluno que pediu o emprestimo.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//Passamos o endereco do no cabeca de infra para buscarmos o livro que o aluno deseja devolver, e o endereco do no cabeca de alunos, para fazer buscas e alteracoes no no associado ao id do aluno que deseja fazer a devolucao, caso seja possivel.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> imprime_infra_por_tipo(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab,<span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *q);<span class="comment">//Nessa funcao, e possivel printar todas as infraestruturas registradas no sistema por tipo.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//Passamos o endereco do no cabeca de infra para buscarmos pelo tipo buscado pelo usuario e imprimir na tela. Tambem e passado o endereco do no cabeca de alunos para indicar a matricula do aluno que as esta utilizando, caso estejam ocupadas.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> buscar_infra_por_id(<span class="keyword">struct</span> <a class="code hl_struct" href="structinfra.html">infra</a> *cab, <span class="keyword">struct</span> <a class="code hl_struct" href="structalunos.html">alunos</a> *q);<span class="comment">//Nessa funcao, e possivel buscar uma infraestrutura especifica por id.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//Passamos o endereco do no cabeca de infra para buscarmos pelo tipo buscado pelo usuario e imprimir na tela, caso seja encontrado. Sao impressas todas as informacoes associadas a essa infraestrutura.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">// OPERACOES_INFRA_H_INCLUDED</span></div>
+<div class="ttc" id="astructalunos_html"><div class="ttname"><a href="structalunos.html">alunos</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:16</div></div>
+<div class="ttc" id="astructinfra_html"><div class="ttname"><a href="structinfra.html">infra</a></div><div class="ttdef"><b>Definition:</b> Cabecalho.h:34</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
