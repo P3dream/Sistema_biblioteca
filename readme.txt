@@ -2,7 +2,7 @@ O sistema da biblioteca, foi desenvolvido para a disciplina de Algoritimos e Est
 Inicialmente, foi desenvolvido em C++, entretanto, como não foi possivel implementar a interface grafica, foi feita a sua
 implementação na linguagem C.
 
-Nesse sistema, são utilizadas listas encadeadas, para otimizar a utilização de memória do sistema. 
+Nesse sistema, voltado para LINUX, são utilizadas listas encadeadas, para otimizar a utilização de memória do sistema. 
 E nele é possivel:
 
 Registrar um aluno;
@@ -25,6 +25,8 @@ Emprestar infraestrutura;
 Devolver infraestrutura;
 Imprimir infraestrutura por tipo;
 Imprimir infraestrutura por ID;
+
+É possivel executar o sistema de forma on-line utilizando o onlineGDB, através do link: https://onlinegdb.com/QrJV0e50M
 
 Todo esse projeto foi desenvolvido por mim, e com certeza, me agregou um valioso conhecimento, principalmente, acerca
 de estrutura de dados. Caso você encontre algum erro ou queira sugerir alguma melhoria, sinta-se livre para fazer uma
