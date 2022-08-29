@@ -26,6 +26,13 @@ Devolver infraestrutura;
 Imprimir infraestrutura por tipo;
 Imprimir infraestrutura por ID;
 
+Porque utilizar listas encadeadas?
+
+Através das listas encadeadas, é possivel fazer o uso da memória sem a necessidade dela ser sequencial. Dessa forma, a utilização de memória nesse sistema é muito otimizada. Por outro lado, operações podem não ser tão eficientes quando submetidas a valores muito grandes de n, em que n pode ser o número de salas, alunos ou infraestruturas cadastradas.
+
+Complexidade das operações: 
+Inserção = Deleção = Busca = O(n)
+
 É possivel executar o sistema de forma on-line utilizando o onlineGDB, através do link: https://onlinegdb.com/QrJV0e50M
 
 Todo esse projeto foi desenvolvido por mim, e com certeza, me agregou um valioso conhecimento, principalmente, acerca
