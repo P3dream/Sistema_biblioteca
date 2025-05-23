@@ -1,42 +1,60 @@
-O sistema da biblioteca, foi desenvolvido para a disciplina de Algoritimos e Estruturas de Dados 1 (AEDS 1). 
-Inicialmente, foi desenvolvido em C++, entretanto, como não foi possivel implementar a interface grafica, foi feita a sua
-implementação na linguagem C.
+# Sistema de Biblioteca em C
 
-Nesse sistema, voltado para LINUX, são utilizadas listas encadeadas, para otimizar a utilização de memória do sistema. 
-E nele é possivel:
+O sistema de biblioteca foi desenvolvido para a disciplina de Algoritmos e Estruturas de Dados 1 (AEDS 1). Inicialmente implementado em C++, o projeto foi migrado para C devido a dificuldades na implementação da interface gráfica.
 
-Registrar um aluno;
-Imprimir todos os alunos registrados;
-Buscar um aluno por id;
-Remover um aluno;
+## 🖥️ Plataforma
+- Desenvolvido especificamente para **Linux**
 
-Registrar um livro;
-Buscar um livro por id;
-Buscar livros por categoria;
-Imprimir todos os livros;
-Emprestar um livro;
-Devolver um livro;
-Remover um livro;
+## 🧠 Estrutura de Dados
+- Utiliza **listas encadeadas** para otimização de memória
+- Alocação dinâmica de memória sem necessidade de armazenamento sequencial
 
-Registrar nova sala, computador ou armario;
-Remover sala, computador ou armario;
-Imprimir todas infraestruturas;
-Emprestar infraestrutura;
-Devolver infraestrutura;
-Imprimir infraestrutura por tipo;
-Imprimir infraestrutura por ID;
+## ✨ Funcionalidades
 
-Porque utilizar listas encadeadas?
+### 👨‍🎓 Gestão de Alunos
+- Registrar novo aluno
+- Imprimir todos os alunos cadastrados
+- Buscar aluno por ID
+- Remover aluno do sistema
 
-Através das listas encadeadas, é possivel fazer o uso da memória sem a necessidade dela ser sequencial. Dessa forma, a utilização de memória nesse sistema é muito otimizada. Por outro lado, operações podem não ser tão eficientes quando submetidas a valores muito grandes de n, em que n pode ser o número de salas, alunos ou infraestruturas cadastradas.
+### 📚 Gestão de Livros
+- Cadastrar novos livros
+- Buscar livro por ID
+- Buscar livros por categoria
+- Listar todos os livros
+- Empréstimo/devolução de livros
+- Remover livros do acervo
 
-Complexidade das operações: 
-Inserção = Deleção = Busca = O(n)
+### 🏫 Gestão de Infraestrutura
+- Cadastrar salas, computadores ou armários
+- Remover itens de infraestrutura
+- Listar toda infraestrutura
+- Empréstimo/devolução de recursos
+- Filtrar por tipo ou ID
 
-É possivel executar o sistema de forma on-line utilizando o onlineGDB, através do link: https://onlinegdb.com/QrJV0e50M
+## ⚡ Por que listas encadeadas?
+As listas encadeadas permitem:
+- Uso eficiente de memória (não-sequencial)
+- Alocação dinâmica conforme demanda
+- Flexibilidade na manipulação de dados
 
-Todo esse projeto foi desenvolvido por mim, e com certeza, me agregou um valioso conhecimento, principalmente, acerca
-de estrutura de dados. Caso você encontre algum erro ou queira sugerir alguma melhoria, sinta-se livre para fazer uma
-pull request. 
+⚠️ **Observação**: Para grandes volumes de dados (n → ∞), as operações podem perder eficiência.
 
-Assinado: Pedro Pizzi(P3dream).
+## 🧮 Complexidade das Operações
+Todas as operações principais possuem complexidade **O(n)**:
+- Inserção
+- Remoção
+- Busca
+
+## 🚀 Como Executar
+Execute online via OnlineGDB:  
+[![Open in OnlineGDB](https://img.shields.io/badge/OnlineGDB-Run%20Now-blue?logo=c&logoColor=white)](https://onlinegdb.com/QrJV0e50M)
+
+## 📌 Considerações Finais
+Este projeto representou uma valiosa experiência de aprendizado em estruturas de dados e programação em C. Sinta-se à vontade para:
+
+- Reportar problemas
+- Sugerir melhorias
+- Contribuir via Pull Requests
+
+Desenvolvido com ❤️ por **Pedro Pizzi (P3dream)**
