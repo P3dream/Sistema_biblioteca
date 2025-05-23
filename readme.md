@@ -57,4 +57,4 @@ Este projeto representou uma valiosa experiência de aprendizado em estruturas d
 - Sugerir melhorias
 - Contribuir via Pull Requests
 
-Desenvolvido com ❤️ por **Pedro Pizzi (P3dream)**
+Desenvolvido por **Pedro Pizzi (P3dream)**
